@@ -1,4 +1,8 @@
 
+/* =========================================
+   ROOT VARIABLES (Light Theme)
+   Global color and font variables
+   ========================================= */
 :root {
   --font-main: Arial, sans-serif;
 
@@ -15,7 +19,10 @@
   --color-h2: #4CAF50;
 }
 
-  /* Colors - Dark Theme */
+/* =========================================
+ ROOT VARIABLES FOR DARK MODE
+ Activated when body has the .dark-mode class
+ ========================================= */
 body.dark-mode {
   --color-bg: #121212;
   --color-text: #000000;
@@ -31,6 +38,10 @@ body.dark-mode {
   --glow-color: #00eaff;
 }
 
+/* =========================================
+   GLOBAL STYLES
+   Base typography and layout
+   ========================================= */
 body {
   font-family: var(--font-main);
   margin: 0;
@@ -39,6 +50,10 @@ body {
   color: var(--color-text);
 }
 
+/* =========================================
+   HEADER STYLING
+   Banner with title and subtitle
+   ========================================= */
 header {
   background: var(--color-header-bg);
   color: var(--color-header-text);
@@ -46,6 +61,10 @@ header {
   text-align: center;
 }
 
+/* =========================================
+   SECTION DEFAULT STYLES
+   Used for About, Skills, Learning, Contact
+   ========================================= */
 section {
   padding: 30px;
   margin: 10px auto;
@@ -60,7 +79,10 @@ section > p {
     line-height: 1.8;
 }
 
-/* Light-mode*/
+/* =========================================
+   SKILLS LIST GRID
+   Responsive grid layout for skills
+   ========================================= */
 .skills-list {
   list-style: none;
   padding: 0;
@@ -77,6 +99,10 @@ section > p {
   box-shadow: 3px 3px 2px;
 }
 
+/* =========================================
+   PROJECTS SECTION
+   Contains multiple project items
+   ========================================= */
 #projects {
   padding: 40px;
   background-color:var(--color-section-bg);
@@ -114,10 +140,18 @@ section > p {
   border-radius: 6px;
 }
 
+/* =========================================
+   SECTION TITLES
+   Applies to all <h2>
+   ========================================= */
 h2 {
   color: var(--color-h2);
 }
 
+/* =========================================
+   FOOTER
+   Simple centered footer
+   ========================================= */
 footer {
   text-align: center;
   padding: 20px;
@@ -125,6 +159,10 @@ footer {
   margin-top: 30px;
 }
 
+/* =========================================
+   THEME TOGGLE BUTTON
+   Positioned top-right with hover effects
+   ========================================= */
 #theme-toggle {
   position: fixed;
   top: 20px;
@@ -146,7 +184,10 @@ footer {
   box-shadow: 0 0 10px 3px rgba(0, 200, 150, 0.7);
 }
 
-/* Dark-Mode*/
+/* =========================================
+   DARK MODE OVERRIDES
+   Specific styling when .dark-mode is active
+   ========================================= */
 body.dark-mode #theme-toggle {
   background-color: #333;
   color: #f17fe2;
@@ -169,22 +210,26 @@ body.dark-mode {
   color: #000000;
 }
 
+/* Dark mode: About section */
 body.dark-mode #about {
   background-color: rgba(155, 48, 255, 0.25);
   color: var(--color-p);
   padding: 2.5rem;
 }
 
+/* Dark mode: Skills items */
 body.dark-mode .skills-list li {
   background-color: #2a2a2a;
   color: var(--color-p);
   box-shadow: 0 4px 10px rgba(83, 202, 75, 0.5);
 }
 
+/* Dark mode: Project text */
 body.dark-mode #projects p {
   color: var(--color-p);
 }
 
+/* Dark mode: Section titles */
 body.dark-mode #about h2 {
   color: #A8FF60;
 }
@@ -197,12 +242,14 @@ body.dark-mode #projects h2 {
   color: #3AAFA9;
 }
 
+/* Dark mode: Project title glowing effect */
 body.dark-mode .project-title {
   color: white;
   position: relative;
   text-shadow: 0 0 8px #ffffff, 0 0 12px #4fc3f7;
 }
 
+/* Animated underline effect */
 body.dark-mode .project-title::after {
   content: '';
   position: absolute;
@@ -221,6 +268,7 @@ body.dark-mode .project-title::after {
   text-shadow: 0 0 8px var(--glow-color);
 } */
 
+/* Gradient glowing title (Firefox safe) */
 body.dark-mode .project-title {
   color: var(--glow-color); /* fallback για Firefox */
   background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
@@ -230,6 +278,7 @@ body.dark-mode .project-title {
   text-shadow: 0 0 8px var(--glow-color);
 }
 
+/* Dark mode: project description fix */
 body.dark-mode .project-description {
   color: #000 !important;
 }
@@ -238,12 +287,18 @@ body.dark-mode .project-description {
   color: #ffffff;
 } */
 
+/* Dark mode: Contact section */
 body.dark-mode #contact {
   background-color:rgba(155, 48, 255, 0.25);
   color: #E0E0E0;
   padding: 2.5rem;
 }
 
+
+/* =========================================
+   GLOW UNDERLINE ANIMATION
+   Used under dark-mode project titles
+   ========================================= */
 @keyframes underline-glow {
   0% {
     opacity: 0.4;
@@ -255,6 +310,10 @@ body.dark-mode #contact {
   }
 }
 
+/* =========================================
+   RESPONSIVE DESIGN
+   Adjustments for screens under 768px
+   ========================================= */
 @media screen and (max-width: 768px) {
   body {
     padding: 10px;
@@ -280,4 +339,5 @@ body.dark-mode #contact {
   p {
     font-size: 1rem;
   }
+
 }
